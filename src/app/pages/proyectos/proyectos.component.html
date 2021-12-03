@@ -1,0 +1,14 @@
+<div class="card my-3 borde" style="max-width: 860px; height:auto;" *ngFor=" let item of items | async">
+    <div class="row g-0 px-2">
+        <div class="col-md-4 my-2">
+            <img style="max-width: 100%;" class="borde" src='{{item.url}}' />
+        </div>
+        <div class="col-md-8">
+            <div class="card-body text-center">
+                <h1 class="">{{item.articulo}}</h1>
+                <h2 class="card-title mt-3">{{item.nombre}}</h2>
+                <p class="card-text mt-3">{{item.descripcion}}</p>
+            </div>
+        </div>
+    </div>
+</div>
