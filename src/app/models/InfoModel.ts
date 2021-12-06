@@ -1,11 +1,11 @@
 export class InfoModel{
-    archivo: File | any;
+    archivo: string[];
     articulo: string;
-    Nombre: string;
+    Nombre: string[];
     descripcion: string;
     constructor(){
-        this.archivo = '';
-        this.Nombre = '';
+        this.archivo = new Array();
+        this.Nombre = new Array();
         this.articulo = '';
         this.descripcion = '';
     }}
