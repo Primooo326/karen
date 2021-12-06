@@ -22,6 +22,7 @@ export class UploadComponent implements OnInit {
       return;
     }
     console.log('guardar ok');
+    
     this.info.archivo = this.file;
     this.servicio.upload(this.info)
   }
