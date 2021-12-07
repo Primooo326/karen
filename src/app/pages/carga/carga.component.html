@@ -1,0 +1,37 @@
+<div class="div1">
+    <div class="container container-sm pt-3 text-center">
+        <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Editar</button>
+        <button class="btn btn-danger" (click)="hola()">hola</button>
+    </div>
+</div>
+<div class="offcanvas offcanvas-end" tabindex="-1" data-bs-scroll="true" data-bs-backdrop="false" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas-header">
+        <h5 id="offcanvasRightLabel">Offcanvas right</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <form (ngSubmit)="guardar(f)" #f='ngForm'>
+            <div class="card">
+                <img [src]="filepath" alt="" class="mx-auto card-img-top imgg">
+                <div class="card-body">
+                    <div class="input-group">
+                        <input type="file" class="form-control" (change)="onFileChange($event)">
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Articulo" [(ngModel)]=info.articulo name="Articulo">
+                        <span class="input-group-text">/</span>
+                        <input type="text" placeholder="Foto" class="form-control" [(ngModel)]=info.Nombre name="Foto">
+                    </div>
+                    <div class="input-group">
+                        <textarea class="form-control" name="Descripcion " cols="10 " rows="3 " [(ngModel)]=info.descripcion placeholder="Descripcion " name="Descripcion "></textarea>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="btn-group">
+                        <button class="btn btn-success" (click)="guardar(f)" data-bs-toggle="tooltip" data-bs-placement="top" title="Subir imagen">Subir</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
