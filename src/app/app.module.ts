@@ -11,6 +11,7 @@ import { UploadComponent } from './pages/upload/upload.component';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { AngularFireFunctionsModule } from '@angular/fire/compat/functions';
 import { provideFirebaseApp,initializeApp } from '@angular/fire/app';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 
@@ -35,7 +36,8 @@ import { ServicioService } from './services/upload.service';
     FormsModule,
     AppRoutingModule,
     AngularFireStorageModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    AngularFireFunctionsModule
   ],
   providers: [ServicioService],
   bootstrap: [AppComponent]

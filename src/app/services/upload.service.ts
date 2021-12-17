@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Firestore, collectionData, addDoc, setDoc, doc, updateDoc, collection, arrayUnion  } from '@angular/fire/firestore';
+import { Firestore, setDoc, doc, updateDoc, collection, arrayUnion  } from '@angular/fire/firestore';
 import { AngularFireStorage } from '@angular/fire/compat/storage';
 import {  Observable } from 'rxjs';
 import { InfoModel } from '../models/InfoModel';

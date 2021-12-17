@@ -29,15 +29,25 @@ ngOnInit(){
 traer(){
   this.items.forEach(resp=>{
     for (let i of resp){
-      let h = i.url
+      let h = i.nombre
       console.log(h);
-      for(let o of h){
-        console.log(o);
-        this.x.push(o)
-      }
+      this.x.push(h)
+      console.log(this.x);
     }
   })
 }
+// traer(){
+//   this.items.forEach(resp=>{
+//     for (let i of resp){
+//       let h = i.url
+//       console.log(h);
+//       for(let o of h){
+//         console.log(o);
+//         this.x.push(o)
+//       }
+//     }
+//   })
+// }
 }
 
 

@@ -18,6 +18,7 @@ export class UploadComponent implements OnInit {
   info: InfoModel = new InfoModel();
   constructor(private servicio:ServicioService) {}
    guardar(form: NgForm){
+     
     if (form.invalid){
       console.warn('formulario invalido');
       return;
