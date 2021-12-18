@@ -13,24 +13,3 @@ export class NavbarComponent implements OnInit {
   }
 
 }
-window.addEventListener('DOMContentLoaded', event => {
-  let navv = true;
-  const navbarShrink = () => {
-    const navbarCollapsible = document.body.querySelector('#mainNav');
-    if (!navbarCollapsible) {
-        return;
-    }
-    if (window.scrollY === 0) {
-        navv = true;
-        navbarCollapsible.classList.remove('navbar-shrink');
-
-
-    } else {
-      navv = false;
-      navbarCollapsible.classList.add('navbar-shrink');
-    }
-
-};
-  navbarShrink();
-  document.addEventListener('scroll', navbarShrink);
-});

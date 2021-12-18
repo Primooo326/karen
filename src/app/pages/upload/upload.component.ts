@@ -12,11 +12,16 @@ export interface carta{imagen:string}
 })
 export class UploadComponent implements OnInit {
   filepath = '';
+  filepathArray:any[] = new Array('./assets/sinFile.png');
   file: File | any;
   uploadFiles:any[] = new Array();
   names:string[] = new Array()
   info: InfoModel = new InfoModel();
-  constructor(private servicio:ServicioService) {}
+
+  constructor(private servicio:ServicioService) {
+    const imagen = ''
+    console.log(this.filepathArray);
+  }
    guardar(form: NgForm){
      
     if (form.invalid){
@@ -33,7 +38,11 @@ export class UploadComponent implements OnInit {
   }
 
   agregar(){
+    if(this.filepathArray[0]=== './assets/sinFile.png'){
+      this.filepathArray.pop();
+    }
     this.uploadFiles.push(this.file)
+    this.filepathArray.push(this.filepath)
     this.filepath = ''
   }
   onFileChange(e: any){
@@ -42,7 +51,7 @@ export class UploadComponent implements OnInit {
     console.log(this.file);
     const reader = new FileReader();
     reader.readAsDataURL(e.target.files[0]);
-    reader.onload = (event: any) => {this.filepath = event.target.result; };
+    reader.onload = (event: any) => {this.filepath = event.target.result;};
   }
   ngOnInit(): void {
   }

@@ -1,19 +1,63 @@
-<div class="div1">
-    <div class="container container-sm pt-3 text-center">
-        <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Editar</button>
-        <button class="btn btn-success" (click)="guardar(f)">Subir</button>
-        <button class="btn btn-danger" (click)="agregar()">agregar</button>
+<section class="container">
+    <div class="card mx-auto d-block" style="width: 30rem; max-width: 40rem; ">
+        <div class="card-header">
+            <h3 class="text-center">Vista Previa</h3>
+        </div>
+        <div id="{{info.Nombre}}" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item" *ngFor="let img of filepathArray; let i = index;" [ngClass]="{'active': i == 0 }">
+                    <img [src]="img" class="d-block mx-auto " alt="..." style="max-width: 100%;">
+                </div>
+                <button class="carousel-control-prev" type="button" [attr.data-bs-target]="'#' + info.Nombre" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" [attr.data-bs-target]="'#' + info.Nombre" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+        <div class="card-body">
+            <h4 class="card-title">
+                {{info.Nombre}}
+            </h4>
+            <p class="card-text">
+                {{info.descripcion}}
+            </p>
+            <div class="btn-group" role="group" aria-label="Basic outlined example">
+                <button class="btn btn-danger">
+                    <i class="fas fa-heart"></i>
+                    123
+                </button>
+                <button class="btn btn-primary">
+                    <i class="fas fa-comment"></i>
+                    2
+                </button>
+                <button class="btn btn-success">
+                    <i class="fas fa-share"></i>
+                    66
+                </button>
+            </div>
+        </div>
+        <div class="card-footer">
+            <div class="text-center btn-group">
+                <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Editar</button>
+                <button class="btn btn-success" (click)="guardar(f)">Subir</button>
+            </div>
+        </div>
+
     </div>
-</div>
-<div class="offcanvas offcanvas-end" tabindex="-1" data-bs-scroll="true" data-bs-backdrop="false" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+</section>
+<div class="offcanvas offcanvas-start" tabindex="-1" data-bs-scroll="true" data-bs-backdrop="false" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
     <div class="offcanvas-header">
         <h5 id="offcanvasRightLabel">Offcanvas right</h5>
         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
-        <form (ngSubmit)="guardar(f)" #f='ngForm'>
+        <form (ngSubmit)="guardar(f)" #f='ngForm' action="">
             <div class="card">
-                <img [src]="filepath" alt="" class="mx-auto card-img-top imgg">
+                <img [src]="filepath" alt="" class="mx-auto card-img-top">
                 <div class="card-body">
                     <div class="input-group">
                         <input type="file" class="form-control" (change)="onFileChange($event)">
@@ -28,9 +72,8 @@
                     </div>
                 </div>
                 <div class="card-footer">
-                    <div class="btn-group">
-
-                    </div>
+                    <!-- <button class="" (click)="agregar()">agregar</button> -->
+                    <input class="btn btn-danger" type="submit" value="agregar">
                 </div>
             </div>
         </form>

@@ -17,6 +17,7 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 
 import { environment } from '../environments/environment';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http'
 import { ServicioService } from './services/upload.service';
 
 
@@ -33,6 +34,7 @@ import { ServicioService } from './services/upload.service';
     provideFirebaseApp(()=>initializeApp(environment.firebase)),
     provideFirestore(()=> getFirestore()),
     BrowserModule,
+    HttpClientModule,
     FormsModule,
     AppRoutingModule,
     AngularFireStorageModule,

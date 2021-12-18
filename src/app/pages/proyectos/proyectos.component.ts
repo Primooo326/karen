@@ -12,17 +12,12 @@ export interface prueba{hola:string, chao:Array<string>}
 export class ProyectosComponent implements OnInit {
   x:string[] = new Array();
 
-  // itemsCollection: AngularFirestoreCollection<Item>;
-  // items: Observable<Item[]>;
   itemsCollection: AngularFirestoreCollection<Item>;
   items: Observable<Item[]>;
   constructor(private afs: AngularFirestore, private servicio: ServicioService) {
 
     this.itemsCollection = afs.collection('articulo');
     this.items = this.itemsCollection.valueChanges();
-
-   
-
 }  
 ngOnInit(){
   }
